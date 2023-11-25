@@ -41,7 +41,7 @@ app.use("/api/v1/match", matchRoute);
 app.use("/api/v1/league", leagueRoute);
 
 //rest api
-app.use("*", function (req, res) {
+app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
