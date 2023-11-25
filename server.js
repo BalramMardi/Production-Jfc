@@ -29,6 +29,9 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
+//static
+app.use(express.static(path.join(__dirname, "./client/build")));
+
 //routes
 app.use("/api/v1/auth", AuthRoute);
 app.use("/api/v1/player", playerRoute);
@@ -36,15 +39,6 @@ app.use("/api/v1/news", newsRoute);
 app.use("/api/v1/teams", teamsRoute);
 app.use("/api/v1/match", matchRoute);
 app.use("/api/v1/league", leagueRoute);
-
-app.get("/", (req, res) => {
-  res.send({
-    message: "Welcome to the app",
-  });
-});
-
-//static
-app.use(express.static(path.join(__dirname, "./client/build")));
 
 //rest api
 app.use("*", function (req, res) {
