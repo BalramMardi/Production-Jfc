@@ -1,8 +1,8 @@
 {
-  "name": "backend",
+  "name": "Jfcdemo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "JFC demo api",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
